@@ -1,0 +1,32 @@
+#include <Arduino.h>
+
+void setup() {
+	// put your setup code here, to run once:
+
+	/* Built in LED example */
+	// pinMode(LED_BUILTIN,OUTPUT);  //LED_BUILTIN  D4 GPIO2
+
+	/* PWM example */
+	pinMode(D8, OUTPUT);
+	analogWriteFreq(25000);
+}
+
+void loop() {
+	// put your main code here, to run repeatedly:
+
+	/* Built in LED example */
+	// digitalWrite(LED_BUILTIN,HIGH);
+	// delay(1000);
+	// digitalWrite(LED_BUILTIN,LOW);
+	// delay(1000);
+
+	/* PWM example */
+	for (int i = 0; i < 255; i ++) {
+		analogWrite(D8, i);  // 255 max
+		delay(10);
+	}
+	for (int i = 255; i > 0; i --) {
+		analogWrite(D8, i);  // 255 max
+		delay(10);
+	}
+}
